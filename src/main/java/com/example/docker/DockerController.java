@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class DockerController {
     @GetMapping("/docker")
     public String docker() {
-        return "Hello Docker!";
+        return "Hello Docker Test!";
     }
 }
