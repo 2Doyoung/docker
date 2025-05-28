@@ -1,0 +1,21 @@
+apiVersion: apps/v1          # Deployment 리소스의 버전
+kind: Deployment             # 생성할 리소스 종류는 'Deployment'
+metadata:
+  name: springboot-deployment  # 이 Deployment 리소스의 이름
+
+spec:
+  replicas: 1                # 실행할 파드 수 (컨테이너 복제 개수)
+  selector:
+    matchLabels:
+      app: springboot        # 어떤 파드를 선택할지 기준 (아래 템플릿과 일치)
+  template:
+    metadata:
+      labels:
+        app: springboot      # 이 템플릿으로 생성되는 파드의 label
+    spec:
+      containers:
+        - name: springboot     # 컨테이너 이름
+          image: my-spring-app # 사용할 도커 이미지 이름
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080  # 컨테이너 내부에서 오픈할 포트
