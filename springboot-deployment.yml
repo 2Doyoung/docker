@@ -2,7 +2,6 @@ apiVersion: apps/v1          # Deployment 리소스의 버전
 kind: Deployment             # 생성할 리소스 종류는 'Deployment'
 metadata:
   name: springboot-deployment  # 이 Deployment 리소스의 이름
-
 spec:
   replicas: 1                # 실행할 파드 수 (컨테이너 복제 개수)
   selector:
